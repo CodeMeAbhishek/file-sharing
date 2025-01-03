@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Selector</title>
+    <link rel="stylesheet" href="resources.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>SUPER CSE</h1>
+            <nav>
+                <a href="resources.html">Resources</a>
+                <a href="tools.html">Tools</a>
+                <a href="updates.html">Updates</a>
+                <a href="about.html" class="active">About</a>
+                <a href="index.html">Home</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Select a Category</h1>
+        <div class="card" onclick="openSubmenu('semester-menu')">
+            <h3>Notes</h3>
+        </div>
+        <div class="card" onclick="openSubmenu('semester-menu')">
+            <h3>Guides</h3>
+        </div>
+        <div class="card" onclick="openSubmenu('semester-menu')">
+            <h3>Flashcards</h3>
+        </div>
+    </div>
+
+    <!-- Semester Selection -->
+    <div id="semester-menu" class="submenu">
+        <h2>Select Your Semester</h2>
+        <select id="semester-select" onchange="showSubjects()">
+            <option value="">-- Choose Semester --</option>
+            <option value="semester1">Semester 1</option>
+            <option value="semester2">Semester 2</option>
+            <option value="semester3">Semester 3</option>
+            <option value="semester4">Semester 4</option>
+        </select>
+    </div>
+
+    <!-- Subject Selection -->
+    <div id="subject-menu" class="submenu">
+        <h2>Select Your Subject</h2>
+        <select id="subject-select" onchange="showMaterials()">
+            <option value="">-- Choose Subject --</option>
+            <option value="math">Mathematics</option>
+            <option value="physics">Physics</option>
+            <option value="chemistry">Chemistry</option>
+            <option value="cs">Computer Science</option>
+        </select>
+    </div>
+
+    <!-- Materials List -->
+    <div id="materials" class="materials">
+        <h2>Available Materials</h2>
+        <ul id="materials-list">
+            <!-- Materials will be populated here dynamically -->
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 SUPER CSE. All rights reserved.</p>
+        <p>Learn & Excel: Save time and boost your grades effortlessly.</p>
+        <div class="footer-links">
+            <a href="#">Resources</a>
+            <a href="#">Tools</a>
+            <a href="#">Updates</a>
+        </div>
+    </footer>
+
+    <script>
+        // Show submenu based on user interaction
+        function openSubmenu(menuId) {
+            document.querySelectorAll('.submenu').forEach(menu => menu.style.display = 'none');
+            document.getElementById(menuId).style.display = 'block';
+        }
+
+        // Show subject dropdown when a semester is selected
+        function showSubjects() {
+            const semester = document.getElementById('semester-select').value;
+            if (semester) {
+                document.getElementById('subject-menu').style.display = 'block';
+            } else {
+                document.getElementById('subject-menu').style.display = 'none';
+            }
+        }
+
+        // Show materials when a subject is selected
+        function showMaterials() {
+            const subject = document.getElementById('subject-select').value;
+            const materialsList = document.getElementById('materials-list');
+
+            // Clear previous materials
+            materialsList.innerHTML = '';
+
+            if (subject) {
+                document.getElementById('materials').style.display = 'block';
+
+                // Example materials for each subject
+                const materials = {
+                    math: ['Calculus Notes', 'Algebra Flashcards', 'Geometry Guide'],
+                    physics: ['Mechanics Notes', 'Thermodynamics Flashcards', 'Optics Guide'],
+                    chemistry: ['Organic Chemistry Notes', 'Periodic Table Flashcards', 'Reaction Mechanisms Guide'],
+                    cs: ['Data Structures Notes', 'Algorithms Flashcards', 'Programming Guide'],
+                };
+
+                // Populate materials dynamically
+                materials[subject].forEach(material => {
+                    const li = document.createElement('li');
+                    li.textContent = material;
+                    materialsList.appendChild(li);
+                });
+            } else {
+                document.getElementById('materials').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
