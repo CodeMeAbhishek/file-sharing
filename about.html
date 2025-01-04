@@ -66,26 +66,11 @@
                     <input type="file" name="attachment" accept=".png, .jpeg, .jpg, .pdf, .doc, .docx, .xls, .xlsx, .ppt, .pptx, .txt, .zip, .rar, .7z">
                     <input type="hidden" name="_autoresponse" value="Thank you for your submission!">
                     <input type="hidden" name="_next" value="https://codemeabhishek.github.io/file-sharing/thanks">
+                    <input type="hidden" name="_webhook" value="https://codemeabhishek.github.io/file-sharing/thanks">
                     <button type="submit">Send</button>
             </form>
           </div>
     </section>
-    <script>
-      document.getElementById("contact-form").addEventListener("submit", function(event) {
-          event.preventDefault();  // Prevent the form from submitting immediately
-  
-          // Optionally: You can add some validation here
-  
-          // Open the "Thanks" page after the form submission
-          window.location.href = "https://codemeabhishek.github.io/file-sharing/thanks";
-          
-          // If you still need to submit the form data (to formsubmit.co), you can do so with fetch or XMLHttpRequest
-          setTimeout(function() {
-              document.getElementById("contact-form").submit();  // Submit the form after redirecting
-          }, 1000);  // Delay the form submission by 1 second to ensure the redirect happens first
-      });
-  </script>
-  
     <footer>
         <p>&copy; 2024 SUPER CSE. All rights reserved.</p>
       <p>Learn & Excel: Save time and boost your grades effortlessly.</p>
