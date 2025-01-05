@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: linear-gradient(135deg, #a1c4fd, #c2e9fb); 
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
     color: #333;
     min-height: 100vh; 
     display: flex;
@@ -17,7 +17,7 @@ body {
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
-    flex-grow: 1; 
+    flex-grow: 1;
 }
 
 /* Navbar styles */
@@ -31,11 +31,22 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
+    flex-wrap: wrap;
 }
 
 .navbar h1 {
     font-size: 1.5rem;
     color: #000;
+    text-align: left;
+    flex: 1 1 auto; 
+    margin-right: auto;
+}
+
+.navbar nav {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: flex-end; 
+    width: auto;
 }
 
 .navbar nav a {
@@ -44,10 +55,37 @@ body {
     font-size: 1rem;
     color: #555;
     transition: color 0.3s ease;
+    padding: 0.5rem 0; /* Add padding for better spacing */
 }
 
 .navbar nav a:hover {
     color: #000;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem; 
+        justify-content: center; 
+    }
+
+    .navbar h1 {
+        font-size: 1.3rem; 
+        margin-right: 0; 
+        text-align: center; 
+        flex: none; 
+    }
+
+    .navbar nav {
+        justify-content: space-evenly; 
+        width: 100%; 
+    }
+
+    .navbar nav a {
+        margin-left: 1rem; 
+        font-size: 0.9rem; 
+        padding: 0.4rem 0; 
+    }
 }
 
 /* Cards setup with smooth hover effects */
@@ -63,12 +101,22 @@ body {
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    flex: 1 1 calc(33.33% - 2rem); /* Make cards responsive with flexbox */
 }
 
 .card:hover {
     background: linear-gradient(145deg, #9b59b6, #2980b9); /* Hover effect */
     transform: translateY(-6px);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Grid layout for cards on smaller screens */
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+        flex: 1 1 100%;
+        margin: 1rem 0; /* Adjust card margins */
+    }
 }
 
 /* Submenu and materials styling with fade-in animations */
