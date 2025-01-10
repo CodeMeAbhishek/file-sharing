@@ -1,4 +1,14 @@
-/* General Reset */
+/* Navbar */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1; /* This will make the main content area grow to fill the available space */
+}
+
 /* Navbar */
 .navbar {
     display: flex;
@@ -17,14 +27,14 @@
     font-size: 1.5rem;
     color: #000;
     text-align: left;
-    flex: 1 1 auto; 
+    flex: 1 1 auto;
     margin-right: auto;
 }
 
 .navbar nav {
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: flex-end; 
+    flex-wrap: wrap;
+    justify-content: flex-end;
     width: auto;
 }
 
@@ -44,26 +54,26 @@
 /* Responsive design for small screens */
 @media (max-width: 768px) {
     .navbar {
-        padding: 1rem; 
-        justify-content: center; 
+        padding: 1rem;
+        justify-content: center;
     }
 
     .navbar h1 {
-        font-size: 1.3rem; 
-        margin-right: 0; 
-        text-align: center; 
-        flex: none; 
+        font-size: 1.3rem;
+        margin-right: 0;
+        text-align: center;
+        flex: none;
     }
 
     .navbar nav {
-        justify-content: space-evenly; 
-        width: 100%; 
+        justify-content: space-evenly;
+        width: 100%;
     }
 
     .navbar nav a {
-        margin-left: 1rem; 
-        font-size: 0.9rem; 
-        padding: 0.4rem 0; 
+        margin-left: 1rem;
+        font-size: 0.9rem;
+        padding: 0.4rem 0;
     }
 }
 
@@ -209,7 +219,7 @@
     max-width: 900px;
 }
 
- .help-students h3 {
+.help-students h3 {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 1.5rem;
@@ -242,7 +252,6 @@
         font-size: 1rem;
     }
 }
-
 
 /* Why You'll Love Us Section */
 .love-grid {
@@ -331,7 +340,7 @@ section h3 {
     font-weight: bold;
 }
 
-.form h4{
+.form h4 {
     text-align: center;
     font-size: 1rem;
     color: #00f70c;
@@ -339,7 +348,7 @@ section h3 {
     font-weight: bold;
 }
 
-.form li{
+.form li {
     display: flex;
     border: solid;
     background-color: #6a11cb;
@@ -348,18 +357,17 @@ section h3 {
     color: #f9f9f9;
 }
 
-
 .form label {
     color: white;
     font-size: 1.1rem;
-    margin-top: 1.5rem; 
-    margin-bottom: 0.5rem; 
-    display: block; 
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    display: block;
     transition: color 0.3s ease;
 }
 
-
-.form input, .form textarea {
+.form input,
+.form textarea {
     width: 100%;
     padding: 1rem;
     margin-top: 0.8rem;
@@ -369,7 +377,8 @@ section h3 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.form input:focus, .form textarea:focus {
+.form input:focus,
+.form textarea:focus {
     box-shadow: 0 0 10px #ff5722;
     transform: scale(1.05);
 }
@@ -386,8 +395,6 @@ section h3 {
     margin-top: 1.5rem;
     transition: background-color 0.3s ease;
 }
-
-
 
 .form button:hover {
     background-color: #e64a19;
@@ -424,42 +431,42 @@ form input[type="file"]:hover {
     }
 }
 
-        /* Custom Thank You Styles */
-        .thanks-message {
-            background: linear-gradient(135deg, #ff5722, #ff4081);
-            color: white;
-            border-radius: 10px;
-            padding: 3rem 2rem;
-            margin-top: 2rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
+/* Custom Thank You Styles */
+.thanks-message {
+    background: linear-gradient(135deg, #ff5722, #ff4081);
+    color: white;
+    border-radius: 10px;
+    padding: 3rem 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 
-        .thanks-message h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
+.thanks-message h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
 
-        .thanks-message p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
+.thanks-message p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
 
-        .thanks-message button {
-            background-color: #ff4081;
-            padding: 1rem 2rem;
-            border: none;
-            color: white;
-            font-size: 1.1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+.thanks-message button {
+    background-color: #ff4081;
+    padding: 1rem 2rem;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-        .thanks-message button:hover {
-            background-color: #ff5722;
-        }
+.thanks-message button:hover {
+    background-color: #ff5722;
+}
 
 .gigachad_thankyou {
     display: flex;
@@ -485,6 +492,7 @@ footer {
     padding: 1.5rem 2rem;
     text-align: center;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: auto;
 }
 
 footer p {
@@ -497,7 +505,8 @@ footer p {
     margin: 0 1rem;
     text-decoration: none;
     font-size: 1rem;
-    color: #555;
+    font-weight: bold;
+    color: #007BFF;
     transition: color 0.3s ease;
 }
 
@@ -512,7 +521,8 @@ footer p {
         font-size: 0.9rem;
     }
 
-    .feature-grid, .vibes-grid {
+    .feature-grid,
+    .vibes-grid {
         flex-direction: column;
     }
 
