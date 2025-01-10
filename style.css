@@ -324,14 +324,40 @@ section h3 {
 
 /* Contact Us Section */
 section.form {
-    background-color: #f7f7f7;
+    background: linear-gradient(135deg, #f0f8ff, #e6f7ff); /* Light gradient background */
     padding: 40px 20px;
-    border-radius: 10px;
+    border-radius: 15px;
     margin: 20px auto;
     width: 80%;
     max-width: 800px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
     font-family: Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  section.form::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 115, 230, 0.15);
+    border-radius: 50%;
+    z-index: 0;
+  }
+  
+  section.form::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 115, 230, 0.1);
+    border-radius: 50%;
+    z-index: 0;
   }
   
   section.form h3 {
@@ -341,6 +367,8 @@ section.form {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1.5px;
+    position: relative;
+    z-index: 1;
   }
   
   section.form label {
@@ -349,6 +377,8 @@ section.form {
     font-size: 1em;
     color: #444;
     font-weight: bold;
+    position: relative;
+    z-index: 1;
   }
   
   section.form input[type="text"],
@@ -362,6 +392,8 @@ section.form {
     border-radius: 5px;
     font-size: 1em;
     transition: border-color 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
   }
   
   section.form input[type="text"]:focus,
@@ -383,6 +415,8 @@ section.form {
     list-style: disc;
     margin-top: 10px;
     font-size: 0.9em;
+    position: relative;
+    z-index: 1;
   }
   
   section.form ul h4 {
@@ -406,6 +440,8 @@ section.form {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
   }
   
   section.form button:hover {
@@ -417,7 +453,9 @@ section.form {
     color: #666;
     margin-top: 20px;
     text-align: center;
-  }
+    position: relative;
+    z-index: 1;
+  }  
   
 /* Responsive Design */
 @media (max-width: 768px) {
